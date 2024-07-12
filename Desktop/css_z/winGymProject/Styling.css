@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 56px;
+  padding: 24px 7%;
   background-color: rgba(1, 1, 1, 0.8);
   border-bottom: 2px solid var(--secondcolor);
   position: fixed;
@@ -35,7 +35,7 @@ body {
 }
 
 .navbar .navbar-tag {
-  font-size: 25px;
+  font-size: 32px;
   font-weight: 800;
   color: white;
   font-style: italic;
@@ -47,9 +47,9 @@ body {
 
 .navbar .navbar-nav a {
   color: white;
-  margin: 0px 48px;
+  margin: 0px 32px;
   display: inline-block;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .navbar .navbar-nav a:hover {
@@ -60,15 +60,23 @@ body {
   content: "";
   display: block;
   padding-bottom: 8px;
-  border-bottom: 4px solid var(--secondcolor);
-  transform: scale(0);
-  transition: 0.3s linear;
+  border-bottom: 2px solid var(--secondcolor);
+  transform: scaleX(0);
+  transition: 0.2s linear;
 }
 
 .navbar .navbar-nav a:hover::after {
-  transform: scale(0.5);
+  transform: scaleX(0.5);
 }
 
+.navbar .navbar-side a:hover {
+  color: var(--secondcolor);
+}
+#humburger-menu {
+  color: white;
+  margin-left: 24px;
+  display: none;
+}
 /* hero */
 .hero-section {
   min-height: 100vh;
@@ -105,7 +113,7 @@ body {
 }
 
 .hero-section .content .btn {
-  background-color: var(--secondcolor);
+  background-color: var(--bgcolor);
   color: white;
   font-size: 24px;
   text-align: center;
@@ -120,14 +128,14 @@ body {
 
 .about-us .about-tag {
   background-color: rgba(255, 255, 255, 0.2);
-  margin-top: 100px;
+  margin-top: 200px;
   padding: 12px 0px;
 }
 
 .about-us .about-tag h2 {
   text-align: center;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 48px;
 }
 
 .about-us .about-tag h2 span {
@@ -146,14 +154,64 @@ body {
 }
 
 .about-us .about .about-description {
-  min-width: 40%;
-  width: 200px;
+  width: 550px;
 }
 
 .about-us .about .about-description h3 {
   margin-bottom: 24px;
+  font-size: 32px;
 }
 
 .about-us .about .about-description p {
-  line-height: 32px;
+  font-size: 24px;
+}
+
+.about-us .about .about-description p span {
+  color: var(--secondcolor);
+}
+
+/* media queries */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #humburger-menu {
+    display: inline-block;
+  }
+
+  /*  */
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 480px;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bgcolor);
+    display: block;
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 55%;
+  }
 }
