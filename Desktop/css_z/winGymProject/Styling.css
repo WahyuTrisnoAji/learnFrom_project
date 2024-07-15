@@ -119,18 +119,18 @@ body {
   padding: 16px 36px;
   cursor: pointer;
   margin-top: 26px;
+  transition: 0.2s linear;
 }
 
 .hero-section .content .btn:hover {
   transform: scale(1.1);
-  transition: 0.2s linear;
   color: var(--secondcolor);
   background-color: white;
 }
 
 .hero-section .content .btn:hover::after {
   transform: scale(1);
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 /* about us */
@@ -190,7 +190,7 @@ body {
 .line1 {
   border-bottom: 1px solid var(--secondcolor);
   width: auto;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 /* class */
@@ -202,10 +202,10 @@ body {
 }
 
 .class-section .menu-class {
-  display: inline-block;
-  text-align: center;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: center;
   margin-top: 40px;
-  flex: 1 1 80;
 }
 
 .class-section .menu-class .public-area,
@@ -214,9 +214,25 @@ body {
 .zumba-area,
 .basket-area,
 .yoga-area {
-  display: inline-block;
-  align-items: center;
-  height: 100px;
+  width: 400px;
+  height: 250px;
+  background-size: cover;
+  text-align: center;
+  padding: 8px 6px;
+  margin: 0px 24px;
+  transition: 0.4s;
+}
+
+.class-section .menu-class .public-area p,
+.boxing-area p,
+.pilates-area p,
+.zumba-area p,
+.basket-area p,
+.yoga-area p {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .class-section .menu-class .public-area img,
@@ -225,8 +241,30 @@ body {
 .zumba-area img,
 .basket-area img,
 .yoga-area img {
-  width: 200px;
   width: 100%;
+}
+
+.class-section .menu-class .public-area:hover,
+.boxing-area:hover,
+.pilates-area:hover,
+.zumba-area:hover,
+.basket-area:hover,
+.yoga-area:hover {
+  cursor: pointer;
+  border-color: var(--secondcolor);
+  transform: scale(1.2);
+  margin: 0px 46px;
+  font-size: 22px;
+}
+
+.class-section .menu-class .public-area:hover::after,
+.boxing-area:hover::after,
+.pilates-area:hover::after,
+.zumba-area:hover::after,
+.basket-area:hover::after,
+.yoga-area:hover::after {
+  transform: scale(1);
+  transition: 0.4s;
 }
 
 /* media queries */
@@ -239,7 +277,7 @@ body {
 }
 
 /* tablet */
-@media (max-width: 768px) {
+@media (max-width: 780px) {
   html {
     font-size: 62.5%;
   }
@@ -298,6 +336,32 @@ body {
 
   .about-us .about .about-description p {
     font-size: 26px;
+  }
+
+  .class-section .menu-class {
+    flex-wrap: wrap;
+  }
+
+  .class-section .menu-class .public-area,
+  .boxing-area,
+  .pilates-area,
+  .zumba-area,
+  .basket-area,
+  .yoga-area {
+    margin: 48px 0px;
+  }
+
+  .class-section .menu-class .public-area:hover,
+  .boxing-area:hover,
+  .pilates-area:hover,
+  .zumba-area:hover,
+  .basket-area:hover,
+  .yoga-area:hover {
+    margin: 46px 12px;
+  }
+
+  .line1 {
+    margin-top: 100px;
   }
 }
 
